@@ -19,7 +19,7 @@ struct StartView: View {
         VStack {
             
         TitleText(text: "WordsGame")
-        WordsTextField(word: $bigWord, placeholder: "Введите слово")
+        WordsTextField(word: $bigWord, placeholder: "Введите слово...")
             .padding(20)
             .padding(.top, 32)
             
