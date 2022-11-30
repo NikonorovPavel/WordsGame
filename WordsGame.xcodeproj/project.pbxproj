@@ -16,6 +16,7 @@
 		E90C2D2D2888566B009B95DF /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90C2D2C2888566B009B95DF /* GameView.swift */; };
 		E90C2D3028994593009B95DF /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90C2D2F28994593009B95DF /* Player.swift */; };
 		E90C2D332899504A009B95DF /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90C2D322899504A009B95DF /* GameViewModel.swift */; };
+		E940410229380ED200EE3132 /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E940410129380ED200EE3132 /* WordCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		E90C2D2C2888566B009B95DF /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		E90C2D2F28994593009B95DF /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		E90C2D322899504A009B95DF /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		E940410129380ED200EE3132 /* WordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +64,8 @@
 			isa = PBXGroup;
 			children = (
 				E90C2D1928884592009B95DF /* WordsGameApp.swift */,
-				E90C2D2E28885688009B95DF /* Views */,
 				E90C2D3128995020009B95DF /* Model */,
+				E90C2D2E28885688009B95DF /* Views */,
 				E94040FE290D74D100EE3132 /* ViewModel */,
 				E90C2D1D28884593009B95DF /* Assets.xcassets */,
 				E90C2D1F28884593009B95DF /* Preview Content */,
@@ -84,6 +86,7 @@
 			children = (
 				E90C2D2828885179009B95DF /* TitleText.swift */,
 				E90C2D2A288852DE009B95DF /* WordsTextField.swift */,
+				E940410129380ED200EE3132 /* WordCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				E90C2D1A28884592009B95DF /* WordsGameApp.swift in Sources */,
 				E90C2D2B288852DE009B95DF /* WordsTextField.swift in Sources */,
 				E90C2D3028994593009B95DF /* Player.swift in Sources */,
+				E940410229380ED200EE3132 /* WordCell.swift in Sources */,
 				E90C2D2D2888566B009B95DF /* GameView.swift in Sources */,
 				E90C2D332899504A009B95DF /* GameViewModel.swift in Sources */,
 			);
@@ -331,7 +335,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -363,7 +367,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
