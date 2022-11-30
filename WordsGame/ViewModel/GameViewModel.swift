@@ -7,6 +7,14 @@
 
 import Foundation
 
+enum WordError: Error {
+    case theSameWord
+    case beforeWord
+    case littleWord
+    case wrongWord
+    case undefinedError
+}
+
 class GameViewModel: ObservableObject {
     
     @Published var player1: Player
@@ -22,25 +30,25 @@ class GameViewModel: ObservableObject {
         self.word = word.uppercased()
     }
     
-    func validate(word: String) -> Bool {
+    func validate(word: String) throws {
         
         let word = word.uppercased()
         guard word != self.word else {
             print("Error")
-            return false
+            throw WordError.theSameWord
         }
         
         guard !(words.contains(word)) else {
             print("Данное слово было составлено ранее")
-            return false
+            throw WordError.beforeWord
         }
         
         guard word.count > 1 else {
             print("Минимум две буквы")
-            return false
+            throw WordError.littleWord
         }
         
-        return true
+        return
                 
     }
     
@@ -54,11 +62,13 @@ class GameViewModel: ObservableObject {
         return chars
     }
     
-    func check(word: String) -> Int {
-        
-        guard self.validate(word: word) else {
-            return 0
+    func check(word: String) throws -> Int {
+        do {
+            try self.validate(word: word)
+        } catch {
+            throw error
         }
+       
         var bigWordArray = wordToChars(word: self.word)
         let smallWordArray = wordToChars(word: word)
         var result = ""
@@ -73,8 +83,7 @@ class GameViewModel: ObservableObject {
                 bigWordArray.remove(at: i)
                 
             } else {
-                print("Такого слова не может быть")
-                return 0
+                throw WordError.wrongWord
             }
         }
         guard result == word.uppercased() else {

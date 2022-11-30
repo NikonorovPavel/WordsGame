@@ -14,6 +14,7 @@ struct StartView: View {
     @State var player2 = ""
     
     @State var isShowedGame = false
+    @State var isAlertPresented = false
     
     var body: some View {
         VStack {
@@ -32,7 +33,13 @@ struct StartView: View {
             .padding(.horizontal, 20)
             
         Button {
-            isShowedGame.toggle()
+            
+            if bigWord.count > 7 {
+                isShowedGame.toggle()
+            } else {
+                self.isAlertPresented.toggle()
+            }
+            
             } label: {
         Text("Старт")
             .font(.custom("AvenirNext-Bold", size: 30))
@@ -44,10 +51,18 @@ struct StartView: View {
             .padding(.top)
             }
         }.background(Image("background"))
+            .alert("Слишком короткое слово",
+                   isPresented: $isAlertPresented,
+                   actions: {
+                Text("Ok")
+            })
             .fullScreenCover(isPresented: $isShowedGame) {
                 
-                let player1 = Player(name: self.player1)
-                let player2 = Player(name: self.player2)
+                let name1 = player1 == "" ? "Player 1" : player1
+                let name2 = player2 == "" ? "Player 2" : player2
+                
+                let player1 = Player(name: name1)
+                let player2 = Player(name: name2)
                 
                 let gameViewVodel = GameViewModel(player1: player1,
                                                   player2: player2,
